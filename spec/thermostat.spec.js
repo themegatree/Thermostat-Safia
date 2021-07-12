@@ -40,26 +40,26 @@ describe('thermostat', function () {
         expect(thermostat.usage()).toEqual('high usage')
     })
 
-    it('power saving mode turns turns on', function () {
+    it('power saving mode turns turns off', function () {
         let thermostat = new Thermostat
         thermostat.powerSavingMode()
-        expect(thermostat._powerSavingMode).toEqual(true)
+        expect(thermostat._powerSavingMode).toEqual(false)
     })
 
     it('toggling power saving changes max _temperature', function () {
         let thermostat = new Thermostat
         thermostat.powerSavingMode()
-        expect(thermostat._max).toEqual(25)
+        expect(thermostat._max).toEqual(32)
     })
 
     it('temp can not exceed max _temperature', function () {
         let thermostat = new Thermostat
-        thermostat._temperature = 31
+        thermostat._temperature = 23
         thermostat.up()
         thermostat.up()
         thermostat.up()
         thermostat.up()
-        expect(thermostat._temperature).toEqual(32)
+        expect(thermostat._temperature).toEqual(25)
     })
 })
 

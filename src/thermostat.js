@@ -1,8 +1,8 @@
 class Thermostat {
     constructor() {
         this._temperature = 20
-        this._powerSavingMode = false
-        this._max = 32
+        this._powerSavingMode = true
+        this._max = 25
     }
 
     up() {
