@@ -5,34 +5,61 @@ describe('thermostat', function () {
     it('thermostat can go up by 1', function () {
         let thermostat = new Thermostat
         thermostat.up()
-        expect(thermostat.temperature).toEqual(21)
+        expect(thermostat._temperature).toEqual(21)
     })
+
     it('thermostat can go down by 1', function () {
         let thermostat = new Thermostat
         thermostat.down()
-        expect(thermostat.temperature).toEqual(19)
+        expect(thermostat._temperature).toEqual(19)
 
     })
+
     it('thermostat can be reset', function () {
         let thermostat = new Thermostat
         thermostat.up()
         //thermostat.up()
         thermostat.reset()
-        expect(thermostat.temperature).toEqual(20) 
+        expect(thermostat._temperature).toEqual(20) 
     })
-    it('check usage', function () {
+
+    it('check usage for med temp', function () {
         let thermostat = new Thermostat 
         expect(thermostat.usage()).toEqual('medium usage')
     })
-    it('check usage', function () {
+
+    it('check usage for low temp', function () {
         let thermostat = new Thermostat 
-        thermostat.temperature = 17
+        thermostat._temperature = 17
         expect(thermostat.usage()).toEqual('low usage')
     })
-    it('check usage', function () {
+
+    it('check usage for high temp', function () {
         let thermostat = new Thermostat 
-        thermostat.temperature = 28
+        thermostat._temperature = 28
         expect(thermostat.usage()).toEqual('high usage')
+    })
+
+    it('power saving mode turns turns on', function () {
+        let thermostat = new Thermostat
+        thermostat.powerSavingMode()
+        expect(thermostat._powerSavingMode).toEqual(true)
+    })
+
+    it('toggling power saving changes max _temperature', function () {
+        let thermostat = new Thermostat
+        thermostat.powerSavingMode()
+        expect(thermostat._max).toEqual(25)
+    })
+
+    it('temp can not exceed max _temperature', function () {
+        let thermostat = new Thermostat
+        thermostat._temperature = 31
+        thermostat.up()
+        thermostat.up()
+        thermostat.up()
+        thermostat.up()
+        expect(thermostat._temperature).toEqual(32)
     })
 })
 
