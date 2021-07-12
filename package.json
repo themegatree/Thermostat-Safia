@@ -1,0 +1,19 @@
+{
+  "name": "thermostat-safia-lottie",
+  "version": "1.0.0",
+  "description": "- Reset - Increase - Decrease",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grantwhiteman/Thermostat-Safia-Lottie.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/grantwhiteman/Thermostat-Safia-Lottie/issues"
+  },
+  "homepage": "https://github.com/grantwhiteman/Thermostat-Safia-Lottie#readme"
+}
