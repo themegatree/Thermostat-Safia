@@ -8,6 +8,7 @@ class Thermostat {
     up() {
         if (this._temperature === this._max) { return 'max temperature reached' }
         else { this._temperature++ }
+        return this._temperature
     }
 
     down() {
@@ -19,9 +20,9 @@ class Thermostat {
     }
 
     usage() {
-       if (this._temperature < 18) { return 'low usage' }
-       else if (this._temperature <= 25) { return 'medium usage' }
-       else { return 'high usage' }
+        if (this._temperature < 18) { return 'low usage' }
+        else if (this._temperature <= 25) { return 'medium usage' }
+        else { return 'high usage' }
     }
 
     powerSavingMode() {
