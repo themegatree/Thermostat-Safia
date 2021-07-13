@@ -11,8 +11,6 @@
         - Power saving mode
 - Current energy usage
 
-
-
 |Object|Properties|Messages|Output|
 |---|---|---|---|
 |Thermostat|Temperature @number|Increase()||

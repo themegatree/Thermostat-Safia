@@ -29,5 +29,3 @@ class Thermostat {
         else { this._powerSavingMode = true, this._max = 25 } //otherwise if it is false assigns it to true
     }
 }
-
-module.exports = Thermostat
