@@ -3,6 +3,7 @@ class Thermostat {
         this._temperature = 20
         this._powerSavingMode = true
         this._max = 25
+        this._min = 10
     }
 
     up() {
@@ -12,7 +13,8 @@ class Thermostat {
     }
 
     down() {
-        this._temperature--
+        if (this._temperature === this._min) { return 'min temperature reached' }
+        else {this._temperature--}
         return this._temperature
     }
 
@@ -28,7 +30,12 @@ class Thermostat {
     }
 
     powerSavingMode() {
-        if (this._powerSavingMode) { this._powerSavingMode = false, this._max = 32 } //checks if pSM is on (true) and if it is assigns it to false
+        if (this._powerSavingMode === true) {this._powerSavingMode = false, this._max = 32} //checks if pSM is on (true) and if it is assigns it to false
         else { this._powerSavingMode = true, this._max = 25 } //otherwise if it is false assigns it to true
+    }
+
+    getPowerSavingMode(){
+        if (this._powerSavingMode === true) {return "On"}
+        else {return "Off"}
     }
 }
