@@ -15,14 +15,19 @@
     <button id="down">-</button>
   </div>
   <div>
-      <button id="reset">Reset</button>
+    <button id="reset">Reset</button>
   </div>
   <div>
-    <h2>Power Saving Mode: </h2> <h2 id="PowerSavingModeDisplay">On</h2>
+    <h2>Power Saving Mode: </h2>
+    <h2 id="PowerSavingModeDisplay">On</h2>
     <button id="PowerSavingMode">Toggle</button>
   </div>
+  </div>
+  <span id="usage">medium usage</span>
   <script src="src/thermostat.js"></script>
   <script src="interface.js"></script>
 </body>
 
 </html>
+
+<!-- we need the display for usage to be in the body, we need to make sure this display has the right tags so we can do stuff with it (ID - what id we're looking at in interface page) we need to set the test inside this tag to the default value (medium usage) -->
