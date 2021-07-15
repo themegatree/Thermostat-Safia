@@ -29,7 +29,14 @@ window.addEventListener('load', function () {
 
     })
 
+    $(document).ready(function () {
+        $("#up").click(function () {
+            // click on this up button and reset will go missing. 
+            $("#reset").hide();
+        });
+    });
 
     // find the element we're using (get element with id) set the = to a variable
     // we need to edit our up and down functions so that they run our usage function from thermostat class after temperature changed 
 })
+
